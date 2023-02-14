@@ -96,7 +96,8 @@ ui = bs4DashPage(
                        div(
                          id = "blform",
                          uiOutput('blacklist'),
-                         br())
+                         br(),
+                         uiOutput('geneblInfo'))
                 )
             )
             ),
@@ -323,7 +324,9 @@ server <- function(input, output, session) {
   })
 
   output$genewlInfo= renderUI({
-    req(input$files1)
+    req(
+      shiny::isTruthy(length(unlist(gene_whitelist$genes)) != 0)
+      )
     if(!is.null(gene_whitelist$genes)){
       x = length(unlist(gene_whitelist$genes))
     } else {
@@ -372,12 +375,19 @@ server <- function(input, output, session) {
   })
 
 
-  output$geneblNumber = renderText({
+  output$geneblInfo= renderUI({
+    req(
+      shiny::isTruthy(length(unlist(gene_blacklist$genes)) != 0)
+      )
     if(!is.null(gene_blacklist$genes)){
-      paste0(length(unlist(gene_blacklist$genes)), " genes in blacklist")
+      x = length(unlist(gene_blacklist$genes))
     } else {
-      "0 genes in blacklist"
+      x = 0
     }
+    bs4InfoBox(title = "Genes in blacklist",
+               value = h5(x),
+               color = "danger",
+               icon = icon("xmark"))
   })
 
 

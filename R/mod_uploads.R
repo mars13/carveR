@@ -24,15 +24,15 @@ mod_uploads_ui = function(id){
           bs4Dash::valueBox(h4(textOutput("counter")),
                             "DATASETS",
                             icon = icon("book", lib = "font-awesome"),
-                            color = "info"),
+                            color = "success"),
           bs4Dash::valueBox(h4(textOutput("filenum")),
                             "FILES",
                             icon = icon("file", lib = "font-awesome"),
-                            color = "warning"),
+                            color = "info"),
           bs4Dash::valueBox(h4(textOutput("datarows")),
                             "DATA ROWS",
                             icon = icon("table", lib = "font-awesome"),
-                            color = "success")
+                            color = "warning")
 
         ),
         bs4Dash::box(width = 9,
