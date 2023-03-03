@@ -26,6 +26,26 @@ edit_fusions = function(df) {
   return(out)
 }
 
+
+format_data = function(data){
+  edit_fusions(data)
+
+  data$variant_type = ""
+  if("fusion" %in% colnames(data)) {
+    data[!is.na(data$fusion),]$variant_type = "SV"
+  }
+  if("avecopynumber" %in% colnames(data)) {
+    data[!is.na(data$avecopynumber),]$variant_type = "CNA"
+  }
+  if("ref" %in% colnames(data)) {
+    data[!is.na(data$ref),]$variant_type = "SNV"
+  }
+  data = data[data$variant_type != "",]
+  data = data[data$gene != "",]
+  return(data)
+}
+
+
 #' Sort and slice
 #'
 #' @param x input data
@@ -43,6 +63,13 @@ modify_plot_data = function(x,
     mutate(value = n())
 
   sel_cols = c("gene", "dataset", "value")
+
+  if(length(unlist(whitelist)) > 0) {
+    sort_cols = c("whitelist", sort_cols)
+    order_vec = c("Descending", order_vec)
+    sel_cols = c(sel_cols, "whitelist")
+    x$whitelist = as.numeric(x$gene %in% unlist(whitelist))
+  }
 
   if (!is.null(sort_cols)){
     sel_cols = unique(c(sel_cols, sort_cols))

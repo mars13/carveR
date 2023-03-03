@@ -1,17 +1,19 @@
 #' Add dataset input box
 #'
 #' @param id id corresponding to the dataset number
-add_box = function(id){
-  ns <- NS(id)
-  tags$div(id = paste0("new_box", id),
+add_box = function(id, name, dataset_id, file_id){
+
+  ns = NS(id)
+
+  tags$div(id = paste0("new_box_",name),
            box(
-             title =  paste0("Dataset #", id),
+             title = paste("Dataset", name),
              status = "primary",
              width = 12,
              solidHeader = T,
-             textInput(inputId = paste0("dataset", id), label = "Name", value = "", width = NULL, placeholder = "Write dataset name..."),
+             textInput(inputId = dataset_id, label = "Name", value = "", width = NULL, placeholder = "Write dataset name..."),
              fileInput(
-               inputId = paste0("files", id),
+               inputId = file_id,
                label = "Choose files",
                multiple = TRUE,
                accept = c("text/csv",
@@ -20,19 +22,20 @@ add_box = function(id){
   )
 }
 
+
 #' Add prioritisation radio button
 #'
 #' @param id id corresponding to the sorting variable name
-add_radiobtn = function(id){
-  ns <- NS(id)
-  tags$div(id = paste0("new_radio", id),
-           radioButtons(inputId = paste0("radio_", id),
-                        label = paste0("Sort ", id, ":"),
+add_radiobtn = function(id, ns_id, item){
+  tags$div(id = paste0("new_radio_", id),
+           radioButtons(inputId = paste0(ns_id, "_radio"),
+                        label = paste0("Sort ", item, ":"),
                         choices = c("Ascending", "Descending"),
                         selected = "Descending",
                         inline = T)
   )
 }
+
 
 #' Add gene list
 #'
