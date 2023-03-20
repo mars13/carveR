@@ -65,3 +65,23 @@ add_input_list = function(id, title, description, status = "primary") {
 
   )
 }
+
+
+#' Add user info box
+#'
+#' @param id id
+#' @param title Box title
+#' @param content Taglist with box content
+#' @param status Status of the box, will determine the color
+
+add_userInfo_box = function(id, title, content, status){
+    box(
+      title = title,
+      status = status,
+      solidHeader = T,
+      width = 12,
+      content
+    )
+  }
+
+

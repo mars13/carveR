@@ -1,4 +1,4 @@
-homePage_ui <- function(id){
+homePage_ui = function(id){
   ns = NS(id)
   tagList(
     br(),
@@ -24,9 +24,9 @@ homePage_ui <- function(id){
                 status = "primary",
                 closable = F,
                 collapsible = F,
-                width = 10,
-                img(src="carveR_homepage.png",
-                    style = "width: 90%; max-width: 800px; min-width: 500px; height: auto; display: block; margin: auto",
+                width = 9,
+                img(src="300ppi/homepage_workflow.png",
+                    style = "width: 95%; max-width: 900px; min-width: 450px; height: auto; display: block; margin: auto",
                     align = "center"))
       )
 

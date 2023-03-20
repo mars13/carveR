@@ -15,10 +15,8 @@ edit_fusions = function(df) {
     b_gene$gene = stringr::str_split_fixed(b_gene$start_fusion, "\\(", 2)[,1]
     b_gene$fusion = paste(b_gene$start_fusion, b_gene$start_fusion, sep = "--")
 
-    new_fusions = rbind(a_gene[, colnames(a_gene) %nin% c("start_fusion", "end_fusion")],
-                        b_gene[b_gene$gene != a_gene$gene, colnames(b_gene) %nin% c("start_fusion", "end_fusion")])
-    out = bind_rows(df[is.na(df$start_fusion), colnames(df) %nin% c("start_fusion", "end_fusion")],
-                    new_fusions)
+    new_fusions = rbind(a_gene, b_gene)
+    out = bind_rows(df[is.na(df$start_fusion),], new_fusions)
   } else {
     out = df
   }
@@ -28,11 +26,12 @@ edit_fusions = function(df) {
 
 
 format_data = function(data){
-  edit_fusions(data)
 
   data$variant_type = ""
-  if("fusion" %in% colnames(data)) {
-    data[!is.na(data$fusion),]$variant_type = "SV"
+
+  if("start_fusion" %in% colnames(data)) {
+    data = edit_fusions(data)
+    data[!is.na(data$start_fusion),]$variant_type = "SV"
   }
   if("avecopynumber" %in% colnames(data)) {
     data[!is.na(data$avecopynumber),]$variant_type = "CNA"
@@ -46,13 +45,15 @@ format_data = function(data){
 }
 
 
-#' Sort and slice
+#' Sort and slice data
 #'
-#' @param x input data
-#' @param whitelist genes in whitelist for priority sorting
-#' @param sort_cols other columns to use in priority sorting
-#' @param order_vec vector of same length of sort_cols indicating in the same order whether the column should be arranged in "Ascending" or "Descending" order
-#' @param ntop max number of genes to show or NA
+#' The function modifies input data frame by grouping data by gene and dataset, calculating the number of times a particular gene appears in a dataset, and sorting the data based on user-defined columns and gene lists. The function allows to select a maximum number of genes to return.
+#'
+#' @param x A data frame with at least gene and dataset columns
+#' @param whitelist Vector of genes to prioritise in sorting the data frame (prevails over other columns in sort_cols)
+#' @param sort_cols Vector of column names to sort the data frame
+#' @param order_vec Vector specifying the order of sorting for each column in sort_cols vector
+#' @param ntop Numeric value specifying the number of top genes to be included in the output data frame. Defaults to NA (all genes returned).
 modify_plot_data = function(x,
                             whitelist = NULL,
                             sort_cols = NULL,
@@ -62,13 +63,17 @@ modify_plot_data = function(x,
     group_by(gene, dataset) %>%
     mutate(value = n())
 
-  sel_cols = c("gene", "dataset", "value")
+  sel_cols = c("gene", "dataset", "value", "text_info")
 
   if(length(unlist(whitelist)) > 0) {
+    whitelist = unlist(whitelist)
     sort_cols = c("whitelist", sort_cols)
     order_vec = c("Descending", order_vec)
     sel_cols = c(sel_cols, "whitelist")
-    x$whitelist = as.numeric(x$gene %in% unlist(whitelist))
+    x$whitelist = as.numeric(x$gene %in% whitelist)
+    wl_not_x = whitelist[!whitelist %in% x$gene]
+    extra_wl = data.frame(gene = wl_not_x, value = 0, whitelist = 0)
+    x = rbind(x, extra_wl)
   }
 
   if (!is.null(sort_cols)){
@@ -94,13 +99,17 @@ modify_plot_data = function(x,
     gene_order = gene_order %>%
       ungroup() %>%
       mutate(rank = row_number())
+
+    gene_order$text_info = gsub(" " , "\n", Reduce(paste, lapply(sort_cols[sort_cols != "max_value"], function(x)
+      paste(x, gene_order[, x, drop = T], sep =  ":"))))
   } else {
+
     gene_order = x %>%
       group_by(gene) %>%
       mutate(max_value = max(value)) %>%
       arrange(desc(value)) %>%
       ungroup() %>%
-      mutate(rank = row_number())
+      mutate(rank = row_number(), text_info = "")
   }
 
   gene_factor = gene_order %>%
@@ -125,3 +134,26 @@ modify_plot_data = function(x,
 
   return(gene_order)
 }
+
+
+
+#' Create a unique column of variant consequence
+#'
+#' @param df input data
+edit_consequence_summary = function(df) {
+    df$consequence_summary = "Unkown"
+    if("SNV" %in% df$variant_type) {
+      values = unlist(lapply( df[df$variant_type == "SNV",]$consequence, function(x) ifelse(is.na(x), "Unknown", x)))
+      df[df$variant_type == "SNV",]$consequence_summary = paste("SNV", values, sep = ":")
+    }
+    if("CNA" %in% df$variant_type) {
+      values = unlist(lapply( df[df$variant_type == "CNA",]$avecopynumber, function(x) ifelse(is.na(x), "Unknown", ifelse(sign(x) == -1, "LOSS", "GAIN"))))
+      df[df$variant_type == "CNA",]$consequence_summary = paste("CNA", values, sep = ":")
+    }
+    if("SV" %in% df$variant_type) {
+      values = unlist(lapply( df[df$variant_type == "SV",]$sv_type, function(x) ifelse(is.na(x), "Unknown", x)))
+      df[df$variant_type == "SV",]$consequence_summary = paste("SV", values, sep = ":")
+    }
+    return(df)
+}
+

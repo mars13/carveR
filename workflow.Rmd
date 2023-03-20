@@ -1,0 +1,74 @@
+# [carver Workflow](https://app.tango.us/app/workflow/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
+
+__Creation Date:__ March 3, 2023  
+__Created By:__ Marina Reixachs  
+[View most recent version on Tango](https://app.tango.us/app/workflow/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
+***
+
+### 1. Go to Uploads using the sidebar menu
+![Step 1 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/57dd8cd0-14ec-458b-b5f6-97dfb4dcb3d3/84bbc9b1-d51f-47b8-88de-6660f8ca71c9.png?crop=focalpoint&fit=crop&fp-x=0.0950&fp-y=0.1376&fp-z=2.0666&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 2. Type the name of your first cohort
+![Step 2 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/e2d41301-3bcc-4b53-98a0-f31bf12033e2/d96debce-6b3b-4956-b4e0-2f7da98e2454.png?crop=focalpoint&fit=crop&fp-x=0.3326&fp-y=0.2065&fp-z=1.9401&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 3. Click on Browse... 
+![Step 3 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/7057e38f-7078-42b6-8d1a-8016911c3660/8d8a569e-cf8f-44aa-aff2-2b3c348acd0d.png?crop=focalpoint&fit=crop&fp-x=0.2612&fp-y=0.2989&fp-z=2.6841&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 4. Select one or more tsv files from file upload menu
+![Step 4 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/393388df-909e-42ab-8b88-c898c7dea43b/5adefd8e-dd49-47be-b3ac-1a8579eb8aa6.png?crop=focalpoint&fit=crop&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 5. Click on plus icon to add an additional dataset
+![Step 5 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/272f9fa9-fa85-4921-841f-f73c72cd4fb9/b6ff7b7f-e2cb-4dd7-aff2-0b6fada52dab.png?crop=focalpoint&fit=crop&fp-x=0.2223&fp-y=0.4392&fp-z=3.0693&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 6. Type the name of the second cohort 
+![Step 6 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/62111fbe-5a4b-4a72-b8d5-3ab783091c6e/2931e695-7a37-46d4-8d57-9c6fd52633d8.png?crop=focalpoint&fit=crop&fp-x=0.3326&fp-y=0.5301&fp-z=1.9401&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 7. Click on Browse... and select the files for the second cohort 
+![Step 7 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/5a43705d-fe91-4a4f-8281-b0d9dd5385c2/8197142f-1034-43b3-bd7c-3930a735fe25.png?crop=focalpoint&fit=crop&fp-x=0.2612&fp-y=0.6226&fp-z=2.6841&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 8. OPTIONAL: Go to Filters to input additional gene lists for consideration
+![Step 8 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/a567d9bd-7970-452e-ab11-0df1f32ff5ac/140106f0-db6e-4fe0-a765-372be653acd3.png?crop=focalpoint&fit=crop&fp-x=0.0589&fp-y=0.1844&fp-z=2.9653&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 9. Type the whitelist genes in the box 
+![Step 9 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/5e12433f-e32c-4307-a740-af817391f7ff/4bccc843-0210-4c6e-96b5-4180ab1110df.png?crop=focalpoint&fit=crop&fp-x=0.3387&fp-y=0.4855&fp-z=1.8954&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 10. Click on Remove to reset the inputs 
+![Step 10 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/86b6a743-750d-48d1-a7d9-ff44d0697329/a006f5e7-cfaf-4834-b20e-ed7c71115fa6.png?crop=focalpoint&fit=crop&fp-x=0.2584&fp-y=0.6747&fp-z=2.7258&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 11. Gene lists can also be added as a file
+File should have one gene per line, without header.
+![Step 11 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/e97a6890-d480-4b89-8744-b583673dff8e/bd1c1857-d5db-40b2-8cb9-dd7482acc204.png?crop=focalpoint&fit=crop&fp-x=0.2612&fp-y=0.5909&fp-z=2.6841&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 12. The number of whitelist genes will be display below the uploads box
+![Step 12 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/38e47a79-88b7-4bdc-85ac-560f336449ba/7ac10f3f-22ba-4ec4-9bd3-015b2bbd7e44.png?crop=focalpoint&fit=crop&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 13. Do the same process with blacklist genes (if desired)
+![Step 13 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/26668319-3c6e-4661-841e-60482c67d70e/99577487-516f-467d-a39b-1a90934fc625.png?crop=focalpoint&fit=crop&fp-x=0.6548&fp-y=0.5909&fp-z=2.6841&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 14. Select "somaticflags.tsv" from file upload menu
+![Step 14 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/e8d5e2a0-bde3-4bbe-af2a-0462c92030ac/9f234244-8622-4964-b400-1165cdc06707.png?crop=focalpoint&fit=crop&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 15. Go to Dashboard to explore affected genes in the uploaded cohorts
+![Step 15 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/aa830069-38cf-45e3-894d-3086881d5eec/f6017954-62d4-48ba-8dcc-63ad86489340.png?crop=focalpoint&fit=crop&fp-x=0.0710&fp-y=0.2306&fp-z=2.7659&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+### 16. Set up custom filters and prioritisation criteria
+![Step 16 screenshot](https://images.tango.us/workflows/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44/steps/81aa6d3d-82b7-45c0-9eb9-e8ab6a390216/eecc710e-4257-4600-8447-9c49f6bfeb20.png?crop=focalpoint&fit=crop&fp-x=0.6605&fp-y=0.1758&fp-z=1.6850&w=1200&blend-align=bottom&blend-mode=normal&blend-x=800&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n)
+
+
+***
+_[This Workflow was created with Tango](https://app.tango.us/app/workflow/4f5122f5-8c1a-4d0a-8ec6-dcde0dfd4e44?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)_

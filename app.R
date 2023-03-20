@@ -11,6 +11,7 @@ library(dplyr)
 library(DT)
 library(fresh)
 library(shinyalert)
+library(colorspace)
 
 options(shiny.maxRequestSize = 2000*1024^2)
 
@@ -87,11 +88,7 @@ ui = bs4DashPage(
                 ),
               tabPanel(
                 title = "Gene view",
-                selectizeInput('geneChoice',
-                               label = "",
-                               choices = "",
-                               options = list(maxOptions = 5, maxItems = 10)),
-                tableOutput('gene_options')
+                geneView_ui("gene_view"),
               )
             ),
           ),
@@ -99,13 +96,7 @@ ui = bs4DashPage(
           #---PAGE4 INFO-----------------
           tabItem(
             tabName = "page4",
-            h3("Input files"),
-            br(),
-            h4("Required fields"),
-            mod_test_ui(id = "test1"),
-            textOutput("test2")
-
-
+           userGuide_ui("user_guide")
           )
         )
       )
@@ -147,34 +138,7 @@ server <- function(input, output, session) {
 
 
   #---DASHBOARD PAGE GENE TAB SERVER -----------------
-  gene = reactiveValues(name = NULL, data = NULL, all = NULL)
-
-  observeEvent(c(input$files1, input$files2, input$files3),{
-      gene$all = c("GENE1", "GENE2")
-  })
-
-
-  observe({
-    updateSelectizeInput(session = session,
-                      inputId = 'geneChoice',
-                      choices = unlist(gene$all), server = T)
-  })
-
-  output$data = DT::renderDT(server = FALSE, {
-    datatable(data_filt(),
-              filter = "top",
-              extensions = "Buttons",
-              options = list(paging = TRUE,
-                              scrollX=TRUE,
-                              searching = TRUE,
-                              ordering = TRUE,
-                              dom = 'Bfrtip',
-                              buttons = c('copy', 'csv', 'excel'),
-                              pageLength=5,
-                              lengthMenu=c(3,5,10)))
-    })
-
-  mod_test_server(id = "test1")
+  geneView_server("gene_view", datasets)
 
 }
 
