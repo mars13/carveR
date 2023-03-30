@@ -10,10 +10,10 @@ edit_fusions = function(df) {
     b_gene = fusions
 
     a_gene$gene = stringr::str_split_fixed(a_gene$start_fusion, "\\(", 2)[,1]
-    a_gene$fusion = paste(a_gene$start_fusion, a_gene$start_fusion, sep = "--")
+    a_gene$fusion = paste(a_gene$start_fusion, a_gene$end_fusion, sep = "--")
 
     b_gene$gene = stringr::str_split_fixed(b_gene$start_fusion, "\\(", 2)[,1]
-    b_gene$fusion = paste(b_gene$start_fusion, b_gene$start_fusion, sep = "--")
+    b_gene$fusion = paste(b_gene$start_fusion, b_gene$end_fusion, sep = "--")
 
     new_fusions = rbind(a_gene, b_gene)
     out = bind_rows(df[is.na(df$start_fusion),], new_fusions)
