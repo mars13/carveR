@@ -280,7 +280,7 @@ frequencyDistribution_server = function(id,
 
                  rank = reactive({
                    if (as.numeric(datasets$datarows) != 0) {
-                     rank =  modify_plot_data(
+                     df =  modify_plot_data(
                        data_filt(),
                        whitelist = gene_whitelist$genes,
                        ntop = NA,
@@ -288,9 +288,14 @@ frequencyDistribution_server = function(id,
                        order_vec = unlist(columns$order)
                      )
                    } else {
-                     rank = data.frame()
+                     df = data.frame()
                    }
+
+                   df = df[,colnames(df) != "text_info"]
+                   return(df)
                  })
+
+
                  output$rank = DT::renderDT(server = T, {
                    datatable(
                      rank(),
