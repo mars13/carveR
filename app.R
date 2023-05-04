@@ -1,6 +1,7 @@
 library(shiny)
 library(shinyjs)
 library(bs4Dash)
+library(shinyBS)
 library(ggplot2)
 library(shinyWidgets)
 library(Hmisc)
@@ -18,7 +19,7 @@ options(shiny.maxRequestSize = 2000*1024^2)
 #---UI------------------
 ui = bs4DashPage(
     title = "carver",
-    header = dashboardHeader( title ="carver"),
+    header = dashboardHeader(title ="carver"),
 
      sidebar =  bs4DashSidebar(
 
@@ -115,8 +116,8 @@ server <- function(input, output, session) {
 
 
   #---FILTER PAGE SERVER-------------
-  gene_whitelist = reactiveValues(genes = NULL, disabled = F, clear = F)
-  gene_blacklist = reactiveValues(genes = NULL, disabled = F, clear = F)
+  gene_whitelist = reactiveValues(genes = NULL, row_selected = NULL, clear = F)
+  gene_blacklist = reactiveValues(genes = NULL, row_selected = NULL, clear = F)
   geneFilters_server("gene_filters", gene_whitelist, gene_blacklist)
 
 
