@@ -103,7 +103,7 @@ See the following example:
 -   **III:** Third priority genes will be the ones NOT in the whitelist list present in cohort A.
 -   **IV:** Forth priority genes will be the ones NOT in the whitelist list present only in cohort B (not seen in cohort A).
 
-#### Gene dashboard
+### Gene dashboard
 
 Gene view allows to explore at variant level within each gene.
 
