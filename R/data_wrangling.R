@@ -1,3 +1,18 @@
+check_input_files = function(df) {
+  outlist = list()
+  if ("gene" %in% colnames(df) & "sample_id" %in% colnames(df))
+  {
+    outlist[["status"]] = T
+    outlist[["title"]] = ""
+    outlist[["message"]] = ""
+  } else {
+    outlist[["status"]] = F
+    outlist[["title"]] = "Input error"
+    outlist[["message"]] = "The data provided does not meet the requirements for analysis. Please ensure that the data includes the necessary fields (gene, sample_id) and that the column names match."
+  }
+  outlist
+}
+
 
 #' Reshape fusions to row per fusion partner
 #'

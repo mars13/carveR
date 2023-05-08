@@ -45,7 +45,7 @@ uploadInput_ui = function(id){
                          collapsible = TRUE,
                          closable = FALSE,
                          conditionalPanel("output.filenum === 0", ns = ns, p("No files uploaded yet.")),
-                         tableOutput(ns("contents"))
+                         DTOutput(ns("contents"))
             )
           )
 
@@ -125,8 +125,11 @@ uploadInput_server = function(id, files, datasets) {
       files_df = reactive({ do.call('rbind', files$files) })
 
       #render table of uploaded files
-      output$contents <- renderTable({
-        files_df()[,c("dataset", "name")]
+      output$contents <- renderDT({
+        req(shiny::isTruthy(length(files_df()) != 0))
+        df = files_df()[,c("dataset", "name", "size")]
+        df$size = unlist(lapply(df$size, function(x) utils:::format.object_size(x, "auto")))
+        add_custom_DT(df, lineHeight = '80%', scrollY = '450')
       })
 
       data = reactive({

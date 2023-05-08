@@ -194,7 +194,7 @@ add_number_info = function(value, text, status= "primary") {
 #' add_custom_DT(mtcars)
 #'
 #' @export
-add_custom_DT = function(df) {
+add_custom_DT = function(df, lineHeight = '60%', scrollY = '150') {
   DT::datatable(
     df,
     selection = list(mode = "single"),
@@ -204,7 +204,7 @@ add_custom_DT = function(df) {
     options = list(
       dom = 't',
       paging = F,
-      scrollY = '150',
+      scrollY = scrollY,
       initComplete = JS(
         "function(settings, json) {",
         "$(this.api().table().header()).css({'font-size': '15px','height': '15px', 'margin-top': '0', 'margin-bottom': '0'});",
@@ -212,6 +212,6 @@ add_custom_DT = function(df) {
       )
     )
   ) %>%
-    formatStyle(0, target = 'row',  lineHeight = '60%')
+    formatStyle(0, target = 'row',  lineHeight = lineHeight)
 
 }

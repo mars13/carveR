@@ -18,6 +18,8 @@ generalInfo = tagList(
     "Add genes to the list by typing them and clicking 'Add'. Delete genes from the list by selecting a row in the table on the left side and then pressing 'Delete'. ")
 )
 
+descriptionStyle = 'color: #353238; font-weight: lighter; padding: 1.5em;'
+
 geneFilters_ui = function(id) {
   ns = NS(id)
   tagList(
@@ -25,8 +27,8 @@ geneFilters_ui = function(id) {
     add_geneList_section(
       id = ns("genewlSection"),
       title = "Gene whitelist",
-      sidebar_content = tags$div(wlDescription , generalInfo, style = 'color: #353238'),
-      sidebar_background = "#F5F4F2",
+      sidebar_content = tags$div(wlDescription , generalInfo, style = descriptionStyle),
+      sidebar_background = "#E7F8F1",
       sidebar_icon = "circle-info",
       content =
         tagList(fluidRow(column(
@@ -66,8 +68,8 @@ geneFilters_ui = function(id) {
       id = ns("geneblSection"),
       title = "Gene blacklist",
       status = "danger",
-      sidebar_content = tags$div(blDescription , generalInfo, style = 'color: #353238'),
-      sidebar_background = "#F5F4F2",
+      sidebar_content = tags$div(blDescription , generalInfo, style = descriptionStyle),
+      sidebar_background = "#FCECEB",
       sidebar_icon = "circle-info",
       content =
         tagList(fluidRow(column(
@@ -158,7 +160,7 @@ geneFilters_server = function(id, gene_whitelist, gene_blacklist) {
                               {
                                 if (!is.null(gene_whitelist$genes) & length(unlist(gene_whitelist$genes)) > 0) {
                                   current_genes = unlist(gene_whitelist$genes)
-                                  new_genes = unique(c(current_genes, input$newWLGene))
+                                  new_genes = unique(c(current_genes, toupper(input$newWLGene)))
 
                                   gene_whitelist$genes = new_genes
                                 }
@@ -169,7 +171,7 @@ geneFilters_server = function(id, gene_whitelist, gene_blacklist) {
                    if (!is.null(gene_whitelist$genes) & length(unlist(gene_whitelist$genes)) > 0) {
 
                      current_genes = unlist(gene_whitelist$genes)
-                     new_genes = setdiff(current_genes, input$newWLGene)
+                     new_genes = setdiff(current_genes, toupper(input$newWLGene))
 
                      gene_whitelist$genes = new_genes
                    }
@@ -264,7 +266,7 @@ geneFilters_server = function(id, gene_whitelist, gene_blacklist) {
                               {
                                 if (!is.null(gene_blacklist$genes) & length(unlist(gene_blacklist$genes)) > 0) {
                                   current_genes = unlist(gene_blacklist$genes)
-                                  new_genes = unique(c(current_genes, input$newBLGene))
+                                  new_genes = unique(c(current_genes, toupper(input$newBLGene)))
 
                                   gene_blacklist$genes = new_genes
                                 }
@@ -275,7 +277,7 @@ geneFilters_server = function(id, gene_whitelist, gene_blacklist) {
                    if (!is.null(gene_blacklist$genes) & length(unlist(gene_blacklist$genes)) > 0) {
 
                      current_genes = unlist(gene_blacklist$genes)
-                     new_genes = setdiff(current_genes, input$newBLGene)
+                     new_genes = setdiff(current_genes, toupper(input$newBLGene))
 
                      gene_blacklist$genes = new_genes
                    }
