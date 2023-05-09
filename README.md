@@ -2,6 +2,14 @@
 
 A shiny dashboard for building virtual gene panels from cancer variants prioritisation.
 
+## Licensing
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-green.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+carveR source code is provided under the [GPLv3](https://github.com/CCICB/introme/blob/master/LICENSE) license. carveR uses R, shiny and other open source packages, please see PKGINFO for additional details.
+
+## Overview
+
 ![](www/300ppi/homepage_workflow.png)
 
 ## Inputs
