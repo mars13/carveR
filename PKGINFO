@@ -1,0 +1,24 @@
+colorspace(2.1-0): BSD_3_clause + file LICENSE
+Hmisc(4.7-2): GPL (>= 2)
+lattice(0.20-45): GPL (>= 2)
+bs4Dash(2.2.1): GPL (>= 2) | file LICENSE
+Formula(1.2-5): GPL-2 | GPL-3
+fresh(0.2.0): GPL-3
+shinyBS(0.61.1): GPL-3
+shinyWidgets(0.7.6): GPL-3
+DT(0.27): GPL-3 | file LICENSE
+shiny(1.7.4): GPL-3 | file LICENSE
+survival(3.5-3): LGPL (>= 2)
+dplyr(1.1.0): MIT + file LICENSE
+ggplot2(3.4.1): MIT + file LICENSE
+plotly(4.10.1): MIT + file LICENSE
+shinyalert(3.0.0): MIT + file LICENSE
+shinycssloaders(1.0.0): MIT + file LICENSE
+shinyjs(2.1.0): MIT + file LICENSE
+base(4.2.2): Part of R 4.2.2
+datasets(4.2.2): Part of R 4.2.2
+grDevices(4.2.2): Part of R 4.2.2
+graphics(4.2.2): Part of R 4.2.2
+methods(4.2.2): Part of R 4.2.2
+stats(4.2.2): Part of R 4.2.2
+utils(4.2.2): Part of R 4.2.2

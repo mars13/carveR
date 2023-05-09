@@ -40,3 +40,7 @@ vignettes/*.pdf
 
 # Code to generate hex Logo
 hexLogo.R
+
+# Code to extract package information
+package_info.R
+
