@@ -44,3 +44,10 @@ hexLogo.R
 # Code to extract package information
 package_info.R
 
+
+#test files with sensible info
+/test_files/
+
+#prep test data
+data/prep_test_data.R
+
