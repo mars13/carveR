@@ -8,13 +8,13 @@ Created by Marina Reixachs on 14/05/2023
 
 -   [Gene Filters](#filters)
 
--   [Dashboard and prioritisatioh](#dashboard)
+-   [Dashboard and prioritisation](#dashboard)
 
 ### 1. Open carveR
 
 ![](https://dubble-prod-01.s3.amazonaws.com/assets/ada4fb59-bbd6-487b-8a53-5fe95862fc39.png?0)
 
-## Uploads <a name="uploads"></a> {#uploads}
+## Uploads <a name="uploads"></a>
 
 ### 2. Go to Uploads
 
