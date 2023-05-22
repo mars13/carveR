@@ -14,6 +14,18 @@ check_input_files = function(df) {
 }
 
 
+read_input_files = function(filename) {
+  if(grepl("tsv|txt", filename)) {
+    f = read.table(filename, header = T, sep = "\t", stringsAsFactors = F)
+  } else if (grepl("csv", filename)) {
+    f = read.csv(filename, header = T, stringsAsFactors = F)
+  } else {
+    f = read.delim(filename, header = T, stringsAsFactors = F)
+  }
+  return(f)
+}
+
+
 #' Reshape fusions to row per fusion partner
 #'
 #' @param df input data

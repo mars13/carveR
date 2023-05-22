@@ -137,7 +137,7 @@ uploadInput_server = function(id, files, datasets) {
         ll <- list()
         for(f in c(1:nrow(files_df())) ){
           # Read from file
-          temp = read.table(files_df()[f,"datapath"], header = T, sep = "\t", stringsAsFactors = F)
+          temp = read_input_files(files_df()[f,"datapath"])
           # Save modified filename as field value
           temp$dataset = files_df()[f,"dataset"]
           # Save within a list
